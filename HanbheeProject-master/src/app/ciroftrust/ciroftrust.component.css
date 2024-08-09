@@ -1,0 +1,9 @@
+.modal.show
+{
+    display: block;
+}
+
+.size{
+    font-size: small;
+}
+

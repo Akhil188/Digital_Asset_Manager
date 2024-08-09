@@ -1,0 +1,18 @@
+
+
+.footer {
+    position:fixed;
+    overflow:hidden;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #280321 0% 0% no-repeat padding-box;
+    /* Set the fixed height of the footer here */
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+  }

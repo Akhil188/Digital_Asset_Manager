@@ -1,0 +1,251 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    
+    </head>
+    <body>
+    
+    <div class="container">
+    <div class="row">
+     <br>  
+    <article class="card">
+    
+    <div class="card-body p-3">
+    <b><p>Change Email</p></b>
+    <hr>
+    <form [formGroup]="form">
+        <div class="fieldBlock" style="font-size:12px">
+             <label for="currentemail" class="title">Current Email<span style="color: crimson;font-size:22px">*</span></label>
+                    <div>
+                        <input formControlName="currentemail" type="email" id="currentemail" class="form-control"  style="padding: 1px 20px;width: 250px;margin-right: 20px;">
+                        <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f.currentemail.touched && f.currentemail.invalid">
+                            <small *ngIf="f.currentemail?.errors?.required">Email is required</small>
+                            <small *ngIf="f.currentemail?.errors?.email">Invalid email address</small>
+                        </small>             
+         </div>
+             
+                  
+      </div>
+      <div class="fieldBlock" style="font-size:12px">
+        <label for="newemail" class="title">New Email<span style="color: crimson;font-size:22px">*</span></label>
+               <div>
+                   <input formControlName="newemail" type="email" id="newemail" class="form-control"  style="padding: 1px 20px;width: 250px;">
+                   <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f.newemail.touched && f.newemail.invalid">
+                    <small *ngIf="f.newemail?.errors?.required">Email is required</small>
+                    <small *ngIf="f.newemail?.errors?.email">Invalid email address</small>
+                </small>  
+    </div>
+             
+ </div>
+ <div class="fieldBlock" style="font-size:12px">
+    <label for="reentermail" class="title">Re-Enter New Email<span style="color: crimson;font-size:22px">*</span></label>
+           <div>
+               <input formControlName="reenteremail" type="email" id="reenteremail" class="form-control"  style="padding: 1px 20px;width: 250px;">
+               <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f.reenteremail.touched && f.reenteremail.invalid">
+                <small *ngIf="f.reenteremail?.errors?.required">Email is required</small>
+                <small *ngIf="f.reenteremail?.errors?.email">Invalid email address</small>
+                <small *ngIf="f.reenteremail?.errors?.mustMatch">Email must match</small>
+                
+            </small>  
+</div>
+         
+</div>
+<!---
+<div class="fieldBlock" style="font-size:12px">
+    <label for="pwd1" class="title">Verify Current Password</label>
+           <div class="col-md-8">
+               <input formControlName="pwd1" type="password" id="pwd1" class="form-control"  style="padding: 1px 20px">
+               <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f.pwd1.touched && f.pwd1.invalid">
+                <small *ngIf="f.pwd1?.errors?.required">Password is required</small>
+                <small *ngIf="f.pwd1?.errors?.pattern " style="color:red;">Please enter a valid password <br>Note:
+                        Password should contain atleast one upper case letter,
+                        one lower case letter,
+                        one digit,
+                        one special character,
+                        Minimum eight in length</small>
+              
+                
+            </small>  
+</div>
+
+</div>
+-->  
+    </form>
+  
+    </div>
+    </article> <!-- card.// -->
+    
+       
+    <article class="card">
+    
+    <div class="card-body p-3">
+    
+    <b><p>Change Password</p></b>
+    <hr>
+    <form [formGroup]="form1">
+        <div class="fieldBlock" style="font-size:12px">
+    <label for="newpwd" class="title">New Password</label>
+    <div>
+    <input type="password"  formControlName="newpwd" class="form-control" placeholder="" style="padding: 1px 10px;width: 250px;">
+    <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f1.newpwd.touched && f1.newpwd.invalid">
+        <small *ngIf="f1.newpwd?.errors?.required">Password is required</small>
+        <small *ngIf="f1.newpwd?.errors?.pattern " style="color:red;">Please enter a valid password <br>Note:
+                Password should contain atleast one upper case letter,
+                one lower case letter,
+                one digit,
+                one special character,
+                Minimum eight in length</small>
+      
+        
+    </small>  
+   </div></div>
+
+    
+    <div class="fieldBlock" style="font-size:12px">
+    <label for="reenterpwd2" class="title">Re-Enter New Password</label>
+    <div>
+    <input type="password"  formControlName="reenterpwd2" class="form-control" placeholder="" style="padding: 1px 10px;width: 250px;">
+    <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f1.reenterpwd2.touched && f1.reenterpwd2.invalid">
+        <small *ngIf="f1.reenterpwd2?.errors?.required">Password is required</small>
+        <small *ngIf="f1.reenterpwd2?.errors?.pattern " style="color:red;">Please enter a valid password <br>Note:
+                Password should contain atleast one upper case letter,
+                one lower case letter,
+                one digit,
+                one special character,
+                Minimum eight in length</small>
+        <small *ngIf="f1.reenterpwd2?.errors?.mustMatch">Password must match</small>
+        
+    </small>  
+  </div>
+    </div>
+    <!---
+    <div class="form-group row" style="font-size:12px">
+        <label for="pwd2" class="col-md-3 col-form-label text-md-right">Verify Current Password</label>
+               <div class="col-md-8">
+                   <input formControlName="pwd2" type="password"  class="form-control"  style="padding: 1px 20px">
+                   <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f1.pwd2.touched && f1.pwd2.invalid">
+                    <small *ngIf="f1.pwd2?.errors?.required">Password is required</small>
+                    <small *ngIf="f1.pwd2?.errors?.pattern " style="color:red;">Please enter a valid password <br>Note:
+                            Password should contain atleast one upper case letter,
+                            one lower case letter,
+                            one digit,
+                            one special character,
+                            Minimum eight in length</small>
+                  
+                    
+                </small>  
+    </div>
+             
+    </div>
+   --->
+     </form> 
+    </div>
+    </article> <!-- card.// -->
+    <br>  
+   
+      <br> 
+    <article class="card">
+    
+    
+    
+    <div class="card-body p-3">
+    
+    <b><p>Change Security Question</p></b>
+    <hr>
+    <form  [formGroup]="form2">
+        <div class="form-group row" style="font-size:12px">
+            <label for="ques1" class="col-md-3 col-form-label text-md-right">Security Question 1</label>
+            <div class="col-md-8">
+                <select class="form-control" formControlName="ques1" >
+                    <option >Please select a Question</option>
+                    <option>What is the name of the town where you were born?</option>
+                    <option>Where was your best family vacation as a kid?</option>
+                    <option>What elementary school did you attend?</option>
+             
+                  </select>
+        
+           </div></div>
+        <div class="form-group row" style="font-size:12px">
+            <label for="ans1" class="col-md-3 col-form-label text-md-right">Answer to Security Question</label>
+            <div class="col-md-8">
+            <input type="text"  formControlName="ans1" class="form-control" placeholder="" style="padding: 1px 10px">
+        
+           </div></div><br>
+           <div class="form-group row" style="font-size:12px">
+            <label for="ques2" class="col-md-3 col-form-label text-md-right">Security Question 2</label>
+            <div class="col-md-8">
+                <select class="form-control" formControlName="ques2" placeholder="Please select a Question">
+                    <option >Please select a Question</option>
+                    <option>What is the name of the town where you were born?</option>
+                    <option>Where was your best family vacation as a kid?</option>
+                    <option>What elementary school did you attend?</option>
+                  
+                  </select>
+        
+           </div></div>
+           <div class="form-group row" style="font-size:12px">
+            <label for="ans2" class="col-md-3 col-form-label text-md-right">Answer to Security Question</label>
+            <div class="col-md-8">
+            <input type="text"  formControlName="ans2" class="form-control" placeholder="" style="padding: 1px 10px">
+        
+           </div></div><br>
+           <div class="form-group row" style="font-size:12px">
+            <label for="ques3" class="col-md-3 col-form-label text-md-right">Security Question 3</label>
+            <div class="col-md-8">
+                <select class="form-control" formControlName="ques3" placeholder="Please select a Question">
+                    <option >Please select a Question</option>
+                    <option>What is the name of the town where you were born?</option>
+                    <option>Where was your best family vacation as a kid?</option>
+                    <option>What elementary school did you attend?</option>
+                    
+                  </select>
+        
+           </div></div>
+           <div class="form-group row" style="font-size:12px">
+            <label for="ans3" class="col-md-3 col-form-label text-md-right">Answer to Security Question</label>
+            <div class="col-md-8">
+            <input type="text"  formControlName="ans3" class="form-control" placeholder="" style="padding: 1px 10px">
+        
+           </div></div>
+           <br><br>
+           <!---
+           <div class="form-group row" style="font-size:12px">
+            <label for="pwd3" class="col-md-3 col-form-label text-md-right">Verify Current Password</label>
+                   <div class="col-md-8">
+                       <input formControlName="pwd3" type="password" id="pwd1" class="form-control"  style="padding: 1px 20px">
+                       <small class="col-md-4 col-form-label text-md-right" style="color:red;" *ngIf="f2.pwd3.touched && f2.pwd3.invalid">
+                        <small *ngIf="f2.pwd3?.errors?.required">Password is required</small>
+                        <small *ngIf="f2.pwd3?.errors?.pattern " style="color:red;">Please enter a valid password <br>Note:
+                                Password should contain atleast one upper case letter,
+                                one lower case letter,
+                                one digit,
+                                one special character,
+                                Minimum eight in length</small>
+                      
+                        
+                    </small>  
+        </div>
+                 
+        </div>
+        --->
+    </form>
+    </div> <!-- card-body.// -->
+    </article> <!-- card.// -->
+     <!-- col.// -->
+    </div><br>
+    <button type="submit" [disabled]="!form.valid || !form1.valid || !form2.valid" class="btn btn-info btn-block" style="background-color:#FFA900; width: 80px;" Button>Save</button>
+    </div>
+ 
+    <br>
+    
+    <button class="btn btn-info btn-block" style="background-color:#FFA900;" Button>2020-2021 BheemAnj,LLC, BheemAnj is a registered trademark of BheemAnj, LLC, All Rights Reserved.</button>
+
+    <footer class="footer">
+        <p>Copyright © 2022 Hanbhee. All rights reserved. Privacy Policy Terms of Service</p>
+    </footer>
+    </body>
+    
+    
+<router-outlet></router-outlet>

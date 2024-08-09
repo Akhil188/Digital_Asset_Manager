@@ -1,0 +1,37 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="dashboard">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <ul class="dashboard-tabs">
+                <li class="active">
+                  <a routerLink="action" class="nav-link" routerLinkActive="active">
+                    <span class="glyphicon glyphicon-user"></span>
+                        <h1>Actions</h1>
+                    </a>
+                </li >
+                <li class="active">
+                  <a routerLink="shared" class="nav-link" routerLinkActive="active">
+                        <span class="glyphicon glyphicon-share"></span>
+                        <h1>Share</h1>
+                    </a>
+                </li>
+                <li class="active">
+                  <a routerLink="receive" class="nav-link" routerLinkActive="active">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <h1>Request/Received</h1>
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+        
+        <footer class="footer">
+            <p>Copyright © 2022 Hanbhee. All rights reserved. Privacy Policy Terms of Service</p>
+        </footer>
+
+
+<router-outlet></router-outlet>

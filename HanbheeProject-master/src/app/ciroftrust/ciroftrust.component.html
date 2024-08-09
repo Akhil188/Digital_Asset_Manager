@@ -1,0 +1,223 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+</head>
+<body>
+    <div class="size">
+    <form>
+      <div class="container">
+          <div class="row">
+              <aside class="col-sm-3">
+                  <article class="card">
+                      <div class="card-body">
+                          <div class="form-group" >
+                              <b>List of People</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="+ Add"  data-toggle="modal" (click)="showModal=true" data-target="#myModal" class="btn btn-small border border-warning"  style="background-color:ghostwhite;color: orange;width: 60px;height: 30px;font-style:initial;" >
+  
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" [ngClass]="{'show':showModal}">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body ">
+          <div class="form-group row" style="font-size:12px">
+          <label for="firstname" class="col-md-3 col-form-label text-md-right">First Name <span style="color: crimson;font-size:22px">*</span></label>
+          <div class="col-md-5">
+          <input type="text"  class="form-control"  style="padding: 1px 20px" >
+           </div>    
+           </div>
+           <div class="form-group row" style="font-size:12px">
+           <label for="middlename" class="col-md-3 col-form-label text-md-right">Middle Name <span style="color: crimson;font-size:22px">*</span></label>
+          <div class="col-md-5">
+          <input type="text"  class="form-control"  style="padding: 1px 20px" >
+           </div>    
+           </div>
+           <div class="form-group row" style="font-size:12px">
+           <label for="LastName" class="col-md-3 col-form-label text-md-right">Last Name <span style="color: crimson;font-size:22px">*</span></label>
+          <div class="col-md-5">
+          <input type="text"  class="form-control"  style="padding: 1px 20px" >
+           </div>  
+           </div>       
+      </div>
+      <div class="modal-footer">
+      <input type="button" value="Add"    style="background-color:#FFA900" >
+        <button type="button" class="btn btn-default" (click)="showModal=false"  data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+                          </div>
+                          <div class="search-box">
+                              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search by name">
+                            </div>
+                            <table class="table table-striped">
+                              <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let person of ciroftrust | filter:searchText">
+                                <td>{{person.id}}</td>
+                                <td>{{person.name}}</td>
+                              </tr>
+                              </tbody>
+                            </table>
+                      </div>
+                  </article>
+                  
+              </aside>
+              <aside class="col-sm-9">
+                  <article class="card">
+                      <div class="card-body ">
+                          <div class="row">
+                              <div class="col-sm-4">
+                                <div class="card">
+                                  <div class="card-header" style="background-color: #EFFFD5;">Family
+                                      <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <select style="right:0; width: 30%;">
+                                          <option>All</option>
+                                          <option>Hemanth</option>
+                                      </select>
+                                  </div>
+                                  <div>
+                                      <input type="text" placeholder="Search.." name="search" style="width: 88%;">
+    <button type="submit"><i class="fa fa-search"></i></button><br>
+    <button style="border:#45B999; background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="Naveen" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white; "><i class="fa fa-times-circle" style="color:grey; background-color: white;"></i></button>
+    <button style="border:grey;background-color: white;"><i class="fa fa-shield" style="color: grey;"></i></button><input type="text" value="Ram" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+    <button style="border:#45B999;;background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="Sneha" disabled style="width: 81%;background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+  
+                                      <br><br><br><br><br><br>
+                              
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="card">
+                                  <div class="card-header" style="background-color:#FCF5CA;">Friends & Relatives
+                                      <i class="fa fa-external-link"></i>&nbsp;&nbsp;
+                                      <select style="align-tracks:right; width: 30%;">
+                                          <option>All</option>
+                                          <option>Hemanth</option>
+                                      </select>
+                                  </div>
+                                  <div>
+                                      <input type="text" placeholder="Search.." name="search" style="width: 88%;">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    <button style="border:#45B999; background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="Peter" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white; "><i class="fa fa-times-circle" style="color:grey; background-color: white;"></i></button>
+    <button style="border:grey;background-color: white;"><i class="fa fa-shield" style="color: grey;"></i></button><input type="text" value="Vishnu" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+                                      <br><br><br><br><br><br><br>
+                              
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                  <div class="card">
+                                      <div class="card-header" style="background-color: #FDE0AF;">Partners
+                                          <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <select style="align-tracks:right; width: 30%;">
+                                              <option>All</option>
+                                              <option>Hemanth</option>
+                                          </select>
+                                      </div>
+                                      <div>
+                                          <input type="text" placeholder="Search.." name="search" style="width: 88%;">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <button style="border:#45B999; background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="John" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white; "><i class="fa fa-times-circle" style="color:grey; background-color: white;"></i></button>
+        <button style="border:grey;background-color: white;"><i class="fa fa-shield" style="color: grey;"></i></button><input type="text" value="Suresh" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+                                        <br>  <br><br><br><br><br><br>
+                                  
+                                      
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>  <br>
+                            <div class="row">
+                              <div class="col-sm-4">
+                                <div class="card">
+                                  <div class="card-header" style="background-color: #FFCD9B;">Employer/Govt
+                                      <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <select style="align-tracks:right; width: 30%;">
+                                          <option>All</option>
+                                          <option>Hemanth</option>
+                                      </select>
+                                  </div>
+                                  <div>
+                                      <input type="text" placeholder="Search.." name="search" style="width: 88%;">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    <button style="border:#45B999; background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="Lucy" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white; "><i class="fa fa-times-circle" style="color:grey; background-color: white;"></i></button>
+    <button style="border:grey;background-color: white;"><i class="fa fa-shield" style="color: grey;"></i></button><input type="text" value="George" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+                                      <br><br><br><br><br><br>
+                              
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="card ">
+                                  <div class="card-header" style="background-color: #FFA067;">Service Provider
+                                      <i class="fa fa-external-link"></i>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                      <select style="align-tracks:right; width: 30%;">
+                                          <option>All</option>
+                                          <option>Hemanth</option>
+                                      </select>
+                                  </div>
+                                  <div>
+                                      <input type="text" placeholder="Search.." name="search" style="width: 88%;">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    <button style="border:#45B999; background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="Meena" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white; "><i class="fa fa-times-circle" style="color:grey; background-color: white;"></i></button>
+    <button style="border:grey;background-color: white;"><i class="fa fa-shield" style="color: grey;"></i></button><input type="text" value="Shyam" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+                                      <br><br><br><br><br><br>
+                              
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                  <div class="card">
+                                      <div class="card-header" style="background-color: #FF8181;">Public
+                                          <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <select style="align-tracks:right; width: 30%;">
+                                              <option>All</option>
+                                              <option>Hemanth</option>
+                                          </select>
+                                      </div>
+                                      <div>
+                                          <input type="text" placeholder="Search.." name="search" style="width: 88%;">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <button style="border:#45B999; background-color: white;"><i class="fa fa-shield" style="color: #45B999;"></i></button><input type="text" value="Jessie" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white; "><i class="fa fa-times-circle" style="color:grey; background-color: white;"></i></button>
+ <button style="border:grey;background-color: white;"><i class="fa fa-shield" style="color: grey;"></i></button><input type="text" value="Lakshmi" disabled style="width: 81%; background-color: white;"><button style="border:#45B999;background-color: white;"><i class="fa fa-times-circle" style="color:grey;;background-color: white;"></i></button>
+                                          <br><br><br><br><br><br>
+                                  
+                                      
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                      </div>
+                  </article>
+                  
+              </aside>
+          
+          
+          </div>
+      </div>
+      
+      
+    </form>
+
+  </div>   
+</body>
+

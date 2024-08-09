@@ -1,0 +1,61 @@
+<div class="container" >
+<button type="button" class="btn btn-secondary btn-lg btn-block" style="text-align: left;background-color:blue;" disabled>Shared</button>
+<div *ngFor="let p of this.Shared">
+<div *ngFor="let q of p.receivers">
+<div class="container" >
+    <div class="row" >
+    <aside class="col-sm-15">
+      
+    <article class="card">
+   
+    <div class="card-body p-3" >
+        <b><p style="color: darkblue;">{{q.name}}</p></b>
+
+    <hr>
+    <div class="row">
+        <div class="col-sm-4" >
+          <div class="card"  >
+            <div class="card-body" style="background-color: lavender;">
+              <p class="card-text">Shared Asset Id:{{p.assetid}}</p>
+              <p>Status of Asset - {{q.response}}</p>
+            
+              <p>Digital ID -<span style="
+                color:coral">{{q.digitalID}}</span></p>
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body" style="background-color: bisque;">
+
+              <p>Activity for Asset: <b>{{p.assetid}}</b> </p>
+              <p>Created On - {{p.created}}</p>
+              <p>Expiry Date - {{q.expiry}}</p>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" >
+              <div class="card-body" style="background-color: #f7f7ab">
+  
+                <h4 align="right">
+                    <input type="button" value="Additional Details" style="color: orange; background-color: white;" />
+                </h4>
+               <br><br>
+              </div>
+            </div>
+          </div>
+       
+      </div>
+    </div>
+    </article> 
+    </aside>
+  </div>
+</div>
+</div>
+</div>
+</div>
+    
+    

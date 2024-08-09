@@ -1,0 +1,300 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  </head>
+  <body>
+    <form >
+    <div class="container">
+    <div class="row">
+       
+    <article class="card">
+    
+    <div class="card-body p-3">
+    <b><p>Security Phrase</p></b>
+    <hr>
+    <div>
+        <div class="fieldBlock" style="font-size:12px;margin-right: 20px;">
+           <label for="firstname" class="title">Phrase 1* <span style="color: crimson;font-size:22px"></span>
+                    <div>
+                        <input type="text"  class="form-control" name="p1"   style="padding: 1px 20px;width: 100%;">
+                    </div>
+                </label>
+        </div>
+        <div class="" style="font-size:12px;margin-right: 20px;">
+            <label for="firstname" class="title">Phrase 2* <span style="color: crimson;font-size:22px"></span>
+                     <div>
+                         <input type="text"  class="form-control" name="p2"   style="padding: 1px 20px;width: 100%;" >
+                     </div>
+                    </label>
+         </div>
+        </div>
+        <div>
+        <div class="fieldBlock" style="font-size:12px;margin-right: 20px;">
+            <label for="firstname" class="title">Phrase 3* <span style="color: crimson;font-size:22px"></span>
+                     <div>
+                         <input type="text"  class="form-control" name="p3"   style="padding: 1px 20px;width: 100%;" >
+                     </div>
+                    </label>
+         </div>
+       
+         
+         <div class="" style="font-size:12px">
+            <label for="firstname" class="title">Phrase 4* <span style="color: crimson;font-size:22px"></span>
+                     <div>
+                         <input type="text"  class="form-control" name="p4"   style="padding: 1px 20px;width: 100%;" >
+                     </div>
+                    </label>
+         </div>
+        </div>
+        
+    </div>
+    </article> <!-- card.// -->
+   
+       
+    <article>
+    
+    <div class="card-body p-2">
+    <b><p>Security Images</p></b>
+    <hr>
+    <button style="background-color: ghostwhite; width: 200px; height: 100px;" onclick="document.getElementById('getFile').click()">+ Add Images</button>
+      <img *ngFor="let url of urls" [src]="url" width="200" height="100" alt="">
+      <input id="getFile" type="file" style="display:none" (change)="selectFiles($event)" multiple>
+     </div>
+    </article> 
+    
+   
+    </div>
+    <b><p>Security Phrase</p></b>
+    <div class="row">
+            <aside class="col-sm-2">
+                <article class="card">
+                    <div class="card-body p-4">
+                        <div class="form-group row" style="font-size:12px">
+                            <label for="Preferred Common Mode">Preferred Comm Mode</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Email" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Email
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Phone" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Phone
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Mail">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Mail
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Chat" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Chat
+                                </label><br>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                </label>
+                              </div>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            </aside>
+            <aside class="col-sm-2">
+                <article class="card">
+                    <div class="card-body p-4">
+                        <div class="form-group row" style="font-size:12px">
+                            <label for="Preferred Common Mode">Access Permission Mode</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="View" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  View
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Copy" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Copy
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Link">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Link
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Integrate" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Integrate
+                                </label><br>
+                               
+                                <label class="form-check-label" for="flexCheckChecked">
+                                </label>
+                              </div>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            </aside>
+            <aside class="col-sm-2">
+                <article class="card">
+                    <div class="card-body p-4">
+                        <div class="form-group row" style="font-size:12px">
+                            <label for="Preferred Common Mode">Persistance Region</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="North America" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  North America
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Asia" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Asia
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Africa">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Africa
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="South America" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  South America
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Europe" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  Europe
+                                </label>
+                              </div>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            </aside>
+            <aside class="col-sm-2">
+                <article class="card">
+                    <div class="card-body p-4">
+                        <div class="form-group row" style="font-size:12px">
+                            <label for="Preferred Common Mode">Preferred Comm Mode</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Personal Cloud" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Personal Cloud
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Local" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Local
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Blockchain">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Blockchain
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="BheemAnj Platform" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    BheemAnj Platform
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="External Drive" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    External Drive
+                                </label>
+                              </div>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            </aside>
+            <aside class="col-sm-2">
+                <article class="card">
+                    <div class="card-body p-4">
+                        <div class="form-group row" style="font-size:12px">
+                            <label for="Preferred Common Mode">Access Permission Mode</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Personal Cloud" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Personal Cloud
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Local" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Local
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Blockchain">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Blockchain
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="BheemAnj Platform" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    BheemAnj Platform
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="External Drive" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    External Drive
+                                </label>
+                              </div>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            </aside>
+            <aside class="col-sm-2">
+                <article class="card">
+                    <div class="card-body p-4">
+                        <div class="form-group row" style="font-size:12px">
+                            <label for="Preferred Common Mode">???</label>
+                            <div class="form-check"><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Personal Cloud" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                   
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Local" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="Blockchain">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="BheemAnj Platform" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                   
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" value="" id="External Drive" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    
+                                </label>
+                              </div>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            </aside>
+            
+            
+
+    </div>  
+    </div>
+
+    <div class="container my-3 bg-light">
+        
+        <div class="form-group"  >
+          <input type="button" value="Save"   style="background-color:#FFA900" >
+        </div>
+    </div>
+  </form>
+  </body>
+  <router-outlet></router-outlet>

@@ -1,0 +1,114 @@
+
+
+<head>
+	<title>Login Page</title>
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	
+</head>
+<body style="zoom: 90%;">
+<div class="div-1">
+		<p class="p-1">Get started with Hanbhee</p>
+		<p class="p-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text.</p>
+</div>
+<div class="container-t1" style="background-color: rgb(255, 255, 255); padding-top: 40px;overflow: hidden;">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="abc"
+					 [ngStyle]="{'color':(this.status === 'success' || this.status === 'Authenticated Successfully' || this.status === 'Registered Successfully'|| this.status === 'Please enter OTP')? 'green' : 'red'}">{{this.status}}
+					</div><br>
+				<h3 style="color:rgb(8, 8, 8);padding-left: 20px;"><b>Sign-in</b></h3>
+			<div class="card-body">
+				
+				<form [formGroup]="form3" (ngSubmit)="submit()">
+					<p style="padding-left: 158px;"><b>Email ID</b></p>
+					<div class="input-group form-group" style="padding-left: 158px;">
+						<input type="text" class="form-control col-md-8"  [(ngModel)]="email"  placeholder="name@mail.com" formControlName="email">
+					</div>
+						<small *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+							<small *ngIf="f.email?.errors?.required">Email is required.</small>
+							<small *ngIf="f.email?.errors?.email">Please, enter valid email address.</small>
+						</small>
+						<p style="text-align: center;">and / or</p>
+						<p style="padding-left: 158px;"><b>Phone No</b></p>
+					<div class="input-group form-group" style="padding-left: 158px;">
+						<input type="text" style="height: 44px;" class="form-control col-md-8"  [(ngModel)]="phone" placeholder="000 000 0000" formControlName="phone">
+					</div>
+						<small *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+							<small *ngIf="f.phone?.errors?.required">PhoneNumber is required.</small>
+							<small *ngIf="f.phone?.errors?.minlength">PhoneNumber should be 10 digit.</small>
+							<small *ngIf="f.phone?.errors?.maxlength">PhoneNumber should not exceed 13 digit.</small>
+							<small *ngIf="f.phone?.errors?.pattern">PhoneNumber is invalid.</small>
+						</small>
+						<div *ngIf="otpfield">
+						<p style="padding-left: 158px;"><b>Access Code</b></p>
+						<div class="input-group form-group" *ngIf="otpfield" style="padding-left: 158px;">
+						
+							<input type="text" style="height:44px;"  class="form-control col-md-8"  [(ngModel)]="otp" placeholder="" formControlName="otp">
+						</div>
+						</div>
+						<small *ngIf="f.otp.touched && f.otp.invalid" class="alert alert-danger">
+							<small *ngIf="f.otp?.errors?.required">OTP is required.</small>
+						</small>
+					<div class="form-group col-md-4 justify-content-center" *ngIf="button1" style="margin-left: 240px; margin-top: 60px;">
+						<input type="button" value="Get Access Code"  (click)="add()" class="btn btn-info btn-block" style="background-color:#FFA900" >
+					</div>
+					<div class="form-group" *ngIf="button2">
+						<input type="button" value="Login"  (click)="buttonAction()" class="btn btn-info btn-block" style="background-color:#FFA900" >
+					</div>
+
+					<div class="form-group" *ngIf="button4">
+						<input type="button" value="Register"  (click)="Register1()" class="btn btn-info btn-block" style="background-color:#FFA900" >
+					</div>
+
+					<div class="form-group" *ngIf="button3">
+						<input type="button" value="Continue To Register"  (click)="Register()" class="btn btn-info btn-block" style="background-color:#FFA900" >
+					</div>
+
+					<div class="form-group" *ngIf="button5">
+						<input type="button" value="Go to profile page"  (click)="Profile()" class="btn btn-info btn-block" style="background-color:#FFA900" >
+					</div>
+
+				   
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<br><br><br><br><br><br>
+
+<footer>
+	<div class="footer-part1">
+		<p style="height: 160px;width: 606px;text-align: right;font-size: 50px;margin-left: 80px;margin-right: 40px;margin-top: 70px;"><b>ADVANCING THE <br> WAY THE WORLD <br> SECURE, INTERACTIVE</b></p>
+		<hr style="width: 7px;height: 350px;margin-top: 70px;border-left: 2px solid black;"> 
+		<div style="margin-right: 20px;">
+		<p style="height: 160px;width: 140px;text-align: left;font-size: 26px;margin-left: 40px;margin-right: 40px;margin-top: 70px;">Let’s Start a <b>Conversation</b></p>
+		<p style="height: 160px;width: 400px;text-align: left;font-size: 20px;margin-left: 40px;margin-right: 40px;margin-top: -70px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		<p style="height: 160px;width: 340px;text-align: left;font-size: 26px;margin-left: 40px;margin-right: 40px;margin-top: -90px;">EMAIL US</p>
+		<p style="height: 160px;width: 340px;text-align: left;font-size: 22px;margin-left: 40px;margin-right: 40px;margin-top: -140px;color: red;">hanbhee@hanbhee.com</p>
+		<p style="height: 160px;width: 340px;text-align: left;font-size: 26px;margin-left: 40px;margin-right: 40px;margin-top: -130px;">CALL US</p>
+		<p style="height: 160px;width: 340px;text-align: left;font-size: 22px;margin-left: 40px;margin-right: 40px;margin-top: -140px;color: red;">+1 800.111.2222</p>
+		</div>
+		<hr style="width: 7px;height: 350px;margin-top: 70px;border-left: 2px solid black;"> 
+		<div>
+			<p style="height: 160px;width: 140px;text-align: left;font-size: 26px;margin-left: 50px;margin-right: 40px;margin-top: 70px;">Need <b>Support</b></p>
+			<p style="height: 160px;width: 400px;text-align: left;font-size: 20px;margin-left: 50px;margin-right: 40px;margin-top: -80px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			<a routerLink="createacc" routerLinkActive="active" style="color: rgb(8, 8, 8)"> 
+				<button style="width: 200px; padding-top: 15px; padding-left: 24px;margin-left: 50px;margin-top: -200px;padding-right: 24px;padding-bottom: 11px;font-size:15pt;">Get Started</button>
+			 </a>
+		</div>
+	</div>
+	<div class="footer-part2">
+	<p>Copyright © 2022 Hanbhee. All rights reserved. Privacy Policy Terms of Service</p>
+	</div>
+</footer>
+
+<router-outlet></router-outlet>
+</body>

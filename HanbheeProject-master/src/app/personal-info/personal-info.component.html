@@ -1,0 +1,278 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+</head>
+<body>
+  <form [formGroup]="form4" (ngSubmit)="submit()">
+  <div class="container">
+  <div class="row">
+ 
+     
+  <article class="card">
+    <div>
+      <b><p>Name</p></b>
+    <hr>
+  <div class="card-body p-3">
+      <div class="fieldBlock" style="font-size:12px;margin-right: 10px;">
+         <label for="firstname" class="form-label">First Name *</label>
+                  <div>
+                      <input type="text" [(ngModel)]="firstname" value={{this.firstname}} class="form-control"  formControlName="firstname"  style="padding: 1px 20px;width:300px;" >
+                      <small *ngIf="f.firstname.touched && f.firstname.invalid" class="col-md-4 col-form-label text-md-right" >
+                          <small style="color:red;"  *ngIf="f.firstname?.errors?.required" >FirstName is required</small>
+                          <small style="color:red;" *ngIf="f.firstname?.errors?.pattern">Please enter a valid FirstName</small>
+                      </small>
+                  </div>
+      </div>
+      <div class="fieldBlock" style="font-size:12px;margin-right: 10px;">
+           <label for="mname" class="form-label">Middle Name</label>
+                  <div>
+                      <input type="text" [(ngModel)]="mname" value={{this.mname}} class="form-control" formControlName="mname"  style="padding: 1px 20px;width:300px;">
+                      <small *ngIf="f.mname.touched && f.mname.invalid" class="col-md-4 col-form-label text-md-right">
+                          <small *ngIf="f.mname?.errors?.pattern" style="color:red;">Please enter a valid MiddleName</small>
+                      </small>
+                  </div>
+      </div>
+      <div class="fieldBlock" style="font-size:12px">
+           <label for="lname" class="form-label">Last Name *</label>
+                  <div>
+                      <input type="text" [(ngModel)]="lname" value={{this.lname}} class="form-control" formControlName="lname"  style="padding: 1px 20px;width: 300px;">
+                      <small *ngIf="f.lname.touched && f.lname.invalid" class="col-md-4 col-form-label text-md-right">
+                          <small *ngIf="f.lname?.errors?.required" style="color:red;">LastName is required</small>
+                          <small *ngIf="f.lname?.errors?.pattern" style="color:red;">Please enter a valid LastName</small>
+                      </small>
+                  </div>
+      </div>
+    
+  </div>
+  </div>
+  <br>
+  </article> <!-- card.// -->
+  
+     
+  <article class="card">
+  
+  <div class="card-body p-3">
+  
+  <b><p>Home Address</p></b>
+  <hr>
+    <div class="fieldBlock" style="font-size:12px">
+  <label for="add1" class="form-label">Address1<span style="color: crimson;font-size:22px">*</span></label>
+  <div class="">
+  <input type="text" name="addr1" [(ngModel)]="addr1" class="form-control" placeholder="" formControlName="addr1"  style="padding: 1px 10px;width: 200px;">
+  <small *ngIf="f.addr1.touched && f.addr1.invalid" class="col-md-4 col-form-label text-md-right">
+      <small *ngIf="f.addr1?.errors?.required" style="color:red;">Address is required</small>
+  </small>
+  </div>
+  </div>
+  <div class="fieldBlock" style="font-size:12px">
+  <label for="add2" class="form-label">Address2</label>
+  <div class="">
+  <input type="text" name="addr2"  class="form-control" placeholder=""   style="padding: 1px 10px;width: 200px;">
+  
+  </div>
+  </div>
+  <div class="fieldBlock" style="font-size:12px">
+  <label for="city" class="form-label">City<span style="color: crimson;font-size:22px"> *</span></label>
+  <div class="">
+  <input type="text" name="city" class="form-control" value={{this.city}} [(ngModel)]="city" placeholder="" formControlName="city" style="padding: 1px 10px;width: 200px;">
+  <small *ngIf="f.city.touched && f.city.invalid" class="col-md-4 col-form-label text-md-right">
+      <small *ngIf="f.city?.errors?.required" style="color:red;">City is required.</small>
+      <small *ngIf="f.city?.errors?.pattern" style="color:red;">Please enter a valid city</small>
+    </small>
+  </div>
+  </div>
+  <div class="form-group">
+    <div class="fieldBlock">
+     <label style="font-size:12px" class="title">State<span style="color: crimson;font-size:22px"> *</span></label>
+      <input type="text" class="form-control" [(ngModel)]="state" value={{this.state}} formControlName="state" style="padding: 1px 10px;width: 200px;">
+      <small *ngIf="f.state.touched && f.state.invalid" class="col-md-6 col-form-label text-md-right">
+          <small *ngIf="f.state?.errors?.required" style="color:red;font-size:10px;">State is required.</small>
+          <small *ngIf="f.state?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid state</small>
+        </small>
+    </div>
+    <div class="fieldBlock">
+      <label style="font-size:12px" >Zip<span style="color: crimson;font-size:22px"> *</span></label>
+      <input type="text" class="form-control" [(ngModel)]="zip" value={{this.zip}} formControlName="zip" style="padding: 1px 10px;width: 200px;">
+      <small *ngIf="f.zip.touched && f.zip.invalid" class="col-md-6 col-form-label text-md-right">
+          <small *ngIf="f.zip?.errors?.required" style="color:red;font-size:10px;">Zip is required.</small>
+          <small *ngIf="f.zip?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid zipcode</small>
+        </small>
+  </div>
+  
+  <div class="fieldBlock" style="font-size:12px">
+  <label for="country" class="title">Country<span style="color: crimson;font-size:22px"> *</span></label>
+  <div class="" >
+  <input type="text" name="country" [(ngModel)]="country" value={{this.country}} class="form-control" placeholder="" formControlName="country" style="padding: 1px 10px;width: 200px;">
+  <small *ngIf="f.country.touched && f.country.invalid" class="col-md-4 col-form-label text-md-right">
+      <small *ngIf="f.country?.errors?.required" style="color:red;">Country is required.</small>
+      <small *ngIf="f.country?.errors?.pattern" style="color:red;">Please enter a valid country</small>
+    </small>
+  </div>
+  </div>
+</div>
+  </div>
+  </article> <!-- card.// -->
+  
+  
+  
+     
+  <article class="card">
+  
+  
+  
+  <div class="card-body p-3">
+  <b><p>Identity Information</p></b>
+  <hr>
+   <div class="form-inline">
+    <div class="form-group mb-2 ml-4">
+    <label style="font-size:12px" class="form-group ml-2">DL ID</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="dlid" formControlName="dlid" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Issuer</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="is1" formControlName="is1" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Expiration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</label>&nbsp;
+      <input type="date" class="form-control ml-2" [(ngModel)]="d1" formControlName="d1" style="padding: 1px" size="8" placeholder="dd/mm/yyyy">
+    </div>
+  </div>
+
+  <small *ngIf="(f.dlid.touched && f.dlid.invalid) || (f.is1.touched && f.is1.invalid) || (f.d1.touched && f.d1.invalid)"  class="col-md-4 col-form-label text-md-right">
+    <small *ngIf="f.dlid?.errors?.pattern || f.is1?.errors?.pattern || f.d1?.errors?.pattern" style="color:red;">Please enter a valid data</small>
+  </small>
+
+  <div class="form-inline mt-2">
+    <div class="form-group mb-2 ml-2">
+    <label style="font-size:12px" class="form-group ml-2">Passport</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="p1" formControlName="p1" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Issuer</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="is2" formControlName="is2" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Expiration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</label>&nbsp;
+      <input type="date" class="form-control ml-2" [(ngModel)]="d2" formControlName="d2"  style="padding: 1px" size="8" placeholder="dd/mm/yyyy">
+    </div>
+  </div>
+
+  <small *ngIf="(f.p1.touched && f.p1.invalid) || (f.is2.touched && f.is2.invalid) || (f.d2.touched && f.d2.invalid)"  class="col-md-4 col-form-label text-md-right">
+    <small *ngIf="f.p1?.errors?.pattern || f.is2?.errors?.pattern || f.d2?.errors?.pattern" style="color:red;">Please enter a valid data</small>
+  </small>
+  
+  <div class="form-inline mt-2">
+    <div class="form-group mb-2 ml-2">
+    <label style="font-size:12px" class="form-group ml-2">Passport</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="p2" formControlName="p2" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Issuer</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="is3" formControlName="is3" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Expiration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</label>&nbsp;
+      <input type="date" class="form-control ml-2"  [(ngModel)]="d3" formControlName="d3" style="padding: 1px" size="8" placeholder="dd/mm/yyyy">
+    </div>
+  </div>
+  <small *ngIf="(f.p2.touched && f.p2.invalid) || (f.is3.touched && f.is3.invalid) || (f.d3.touched && f.d3.invalid) "  class="col-md-4 col-form-label text-md-right">
+    <small *ngIf="f.p2?.errors?.pattern || f.is3?.errors?.pattern || f.d3?.errors?.pattern" style="color:red;">Please enter a valid data</small>
+  </small>
+  
+  <div class="form-inline mt-2">
+    <div class="form-group mb-2">
+    <label style="font-size:12px" class="form-group ml-2">Secret Key</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="key" formControlName="key" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Issuer</label>&nbsp;
+      <input type="text" class="form-control ml-2" [(ngModel)]="is4" formControlName="is4" style="padding: 1px" size="8">
+    </div>
+    <div class="form-group mx-sm-1 mb-2"> &nbsp;
+      <label style="font-size:12px" >Expiration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</label>&nbsp;
+      <input type="date" class="form-control ml-2" [(ngModel)]="d4" formControlName="d4" style="padding: 1px" size="8" placeholder="dd/mm/yyyy">
+    </div>
+  </div>
+
+  <small *ngIf="(f.key.touched && f.key.invalid) || (f.is4.touched && f.is4.invalid) || (f.d4.touched && f.d4.invalid)"  class="col-md-4 col-form-label text-md-right">
+    <small *ngIf="f.key?.errors?.pattern || f.is4?.errors?.pattern || f.d4?.errors?.pattern" style="color:red;">Please enter a valid data</small>
+  </small>
+  
+  </div> <!-- card-body.// -->
+  </article> <!-- card.// -->
+  <article class="card">
+  
+  <div class="card-body p-3">
+  <b><p>About You</p></b>
+  <hr>
+  <div class="form-group row">
+      <div class="fieldBlock" style="font-size:12px">
+           <label class="title">Email<span style="color: crimson;font-size:22px"> *</span></label>
+                  <div class="">
+                      <input type="text" [(ngModel)]="email"  class="form-control" formControlName="email"  style="padding: 1px 20px;width: 200px;">
+                      <small *ngIf="f.email.touched && f.email.invalid" class="col-md-6 col-form-label text-md-right">
+                        <small *ngIf="f.email?.errors?.required" style="color:red;font-size:10px;">Email is required.</small>
+                        <small *ngIf="f.email?.errors?.email" style="color:red;font-size:10px;">Please enter a valid EmailID</small>
+                      </small>
+                    </div>
+      </div>
+      
+      
+      <div class="fieldBlock" style="font-size:12px">
+        <label class="title" for="gender" >Gender</label>
+        <div class="" >
+          <select id="gender" class="form-control" [(ngModel)]="gender" value={{this.gender}} formControlName="gender" style="padding: 1px 20px;width: 200px;">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> 
+        </div>
+      </div>
+      
+      <div class="fieldBlock" style="font-size:12px">
+        <label class="title" for="maritialstatus" >Maritial Status</label>
+        <div class="" >
+          <select id="maritialstatus" value={{this.maritialstatus}} [(ngModel)]="maritialstatus" class="form-control" formControlName="maritialstatus" style="padding: 1px 20px;width: 200px;">
+            <option value="Married">Married</option>
+            <option value="Unmarried">Unmarried</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select> 
+        </div>
+        </div>
+      </div>
+      
+      <div class="fieldBlock" style="font-size:12px">
+           <label for="income" class="title">Annual Household Income<span style="color: crimson;font-size:22px"> *</span></label>
+                  <div class="">
+                      <input type="text" [(ngModel)]="income" value={{this.income}} class="form-control" formControlName="income"  style="padding: 1px 20px;width: 300px;">
+                      <small *ngIf="f.income.touched && f.income.invalid" class="col-md-6 col-form-label text-md-right">
+                        <small *ngIf="f.income?.errors?.required" style="color:red;font-size:10px;">Income is required.</small>
+                        <small *ngIf="f.income?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid income</small>
+                      </small>
+                    </div>
+      </div>
+  </div>
+  </article> 
+
+  </div>
+  </div>
+  <div class="container my-3 bg-light">
+      
+      <div class="form-group" *ngIf="button1" >
+        <input type="button" value="Save"  (click)="next()"  style="background-color:#FFA900" >
+      </div>
+      <div class="form-group" *ngIf="button2" >
+        <input type="button" value="Update"  (click)="update1()"  style="background-color:#FFA900" >
+      </div>
+      
+  </div>
+</form>
+<footer class="footer">
+  <p>Copyright © 2022 Hanbhee. All rights reserved. Privacy Policy Terms of Service</p>
+</footer>
+</body>
+<router-outlet></router-outlet>

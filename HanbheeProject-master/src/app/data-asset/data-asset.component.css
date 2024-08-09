@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://wallpapercave.com/wp/wp3232953.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 200%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 300%;
+align-content: center;
+}
+
+.card{
+height: 400px;
+margin-top: auto;
+margin-bottom: auto;
+width: 500px;
+background-color:beige;
+}

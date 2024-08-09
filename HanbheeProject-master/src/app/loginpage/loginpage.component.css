@@ -1,0 +1,159 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+font-family: 'Numans', sans-serif;
+background-color: rgb(255, 255, 255);
+overflow: hidden;
+}
+
+.green{
+color: green;
+}
+
+.red{
+    color:red;
+}
+
+.abc
+{
+    text-align: center;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border-left: 5px solid red;
+}
+
+.container-t1{
+height: 650px;
+align-content: center;
+overflow: hidden;
+}
+
+.card{
+height: 530px;
+width: 830px;
+background-color: #FFFFFF;
+box-shadow:5px 5px 5px 5px #888888;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFA900;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFA900;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.p-1{
+    height: 80px;
+    line-height: 100px;
+    padding-left: 50px;
+    margin-left: 50px;
+    /* UI Properties */
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing:normal;
+    text-align: left;
+    font-size:xx-large;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .p-2{
+    margin-left:50px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing:normal;
+    text-align: left;
+    font-size:large;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .div-1{
+    position:static;
+    top: 80px;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    background: url("https://i.ibb.co/0DC0ryH/Cropped-2560-1440-456498.jpg"); 
+    background-size:2300px 300px;
+  
+  }
+
+.footer-part1{
+    overflow: hidden;
+    height: 580px;
+    width: 100%;
+    background-color: #FFC800;
+    display: flex;
+}
+
+.footer-part2 {
+    overflow:hidden;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #280321 0% 0% no-repeat padding-box;
+    /* Set the fixed height of the footer here */
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+  }

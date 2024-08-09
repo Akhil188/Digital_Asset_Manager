@@ -1,0 +1,212 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  
+  </head>
+  <body>
+  <form [formGroup]="form2">
+  <div class="container">
+  <div class="row">
+
+     
+  <article class="card">
+  
+  <div class="card-body p-3">
+    <b><p>Details</p></b>
+    <hr>
+  
+     
+      <div class="row" style="font-size:12px">
+          <div class="col-sm-5 col-md-3">
+              <img src="https://kacrm.datamaticsbpm.com/assets/images/users/avatar-1.jpeg"  width="80px" height="100px" style="margin-left: 180px;"/>
+          </div>
+          <div class="col-sm-5 col-md-7">
+          <p>Name - <b>{{this.firstname}}</b></p>
+          
+          <div class="form-group" *ngIf="button2">
+           Natural ID- <button class="btn btn-warning" (click)="DigitalId()" style="width:100px;height:25px;font-size: 12px;">Generate ID</button>
+          </div>
+          <div class="form-group" *ngIf="text2">
+          Natural ID-<label style="color: green;">{{this.digid}}</label>
+          </div>
+          <p>Email -<b>{{this.email}}</b> </p>
+          <p>Phone No -<b> </b></p>            
+          </div>
+         
+   
+  
+  </div>
+     
+     
+  </div>
+  </article> <!-- card.// -->
+  
+  
+  
+  <article class="card">
+  
+  <div class="card-body p-3">
+  <b><p>Public Security Key</p></b>
+  <hr>
+  
+      <div class="fieldBlock" style="font-size:12px">
+           <label for="securitykey" class="form-label">Security Key<span style="color: crimson;font-size:22px"> *</span></label>
+              <div class="">
+                    <div class="form-group" *ngIf="button1">
+                    <button class="btn btn-warning" (click)="triggerModal(modalData)">Generate Key</button>
+                    </div>
+                    <div class="form-group" *ngIf="text1">
+                        <label style="color: green;">{{this.keymsg}}</label>
+                    </div>
+          </div>
+                  
+      </div>
+      
+      
+  <div class="fieldBlock" style="font-size:12px">
+              <label for="share" class="form-label">Share</label>
+                  <div class="">
+                    <input type="checkbox" id="switch"
+                  class="checkbox" />
+      <label for="switch" class="toggle">
+          
+      </label>
+                  </div>
+  </div>
+  </div>
+  </article> 
+  
+     
+  <article class="card">
+  
+  <div class="card-body p-3">
+  
+  <b><p>Location</p></b>
+  <hr>
+  
+<div class="fieldBlock" style="font-size:12px;margin-right: -10px;">
+  <label for="city" class="form-label">City<span style="color: crimson;font-size:22px"> *</span></label>
+  <div class="">
+  <input type="text" name="city" class="form-control" [(ngModel)]="city" value={{this.city}} formControlName="city" placeholder="" style="padding: 1px 10px;width: 200px;margin-right: 5px;">
+  <small *ngIf="f.city.touched && f.city.invalid" class="col-md-4 col-form-label text-md-right">
+    <small *ngIf="f.city?.errors?.required" style="color:red;">City is required.</small>
+    <small *ngIf="f.city?.errors?.pattern" style="color:red;">Please enter a valid city</small>
+  </small>
+</div>
+</div>
+  <div class="fieldBlock">
+     <label style="font-size:12px">State<span style="color: crimson;font-size:22px"> *</span></label>
+     <div class="">
+      <input type="text" class="form-control" id="input1" [(ngModel)]="state" value={{this.state}} formControlName="state" style="padding: 1px 10px;width: 200px;">
+      <small *ngIf="f.state.touched && f.state.invalid" class="col-md-6 col-form-label text-md-right">
+        <small *ngIf="f.state?.errors?.required" style="color:red;font-size:10px;">State is required.</small>
+        <small *ngIf="f.state?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid state</small>
+      </small>
+   </div>
+   </div>
+    <div class="fieldBlock"> 
+      <label style="font-size:12px" >Zip<span style="color: crimson;font-size:22px"> *</span></label>
+      <div class="">
+      <input type="text" class="form-control" id="input2" [(ngModel)]="zip" value={{this.zip}} formControlName="zip" style="padding: 1px 10px;width: 200px;">
+      <small *ngIf="f.zip.touched && f.zip.invalid" class="col-md-6 col-form-label text-md-right">
+        <small *ngIf="f.zip?.errors?.required" style="color:red;font-size:10px;">Zip is required.</small>
+        <small *ngIf="f.zip?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid zipcode</small>
+      </small>
+    </div>
+    </div>
+ 
+  
+  <div class="form-group row" style="font-size:12px">
+  <label style="font-size:12px">Country<span style="color: crimson;font-size:22px"> *</span></label>
+  <div class="">
+  <input type="text" name="country" class="form-control" [(ngModel)]="country" value={{this.country}} placeholder="" formControlName="country" style="padding: 1px 10px;width: 200px;">
+  <small *ngIf="f.country.touched && f.country.invalid" class="col-md-4 col-form-label text-md-right">
+    <small *ngIf="f.country?.errors?.required" style="color:red;">Country is required.</small>
+    <small *ngIf="f.country?.errors?.pattern" style="color:red;">Please enter a valid country</small>
+  </small>
+</div>
+  </div>   
+  </div>
+  </article> <!-- card.// -->
+ 
+  <br>  
+  
+
+  <article class="card">
+  
+  
+  
+  <div class="card-body p-3">
+  <b><p>About Me</p></b>
+  <hr>
+  <div class="form-group">
+     <b><label for="exampleFormControlTextarea1">Tell us a little bit about yourself</label></b>
+      <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="aboutme" value={{this.aboutme}} rows="8"></textarea>
+    </div>
+   <div class="form-group">
+  <b><label for="website">My Website</label></b>
+  <p style="font-size:12px">Enter a full valid website URL. Example:https://bootsnipp.com/</p>
+  <input type="text" class="form-control" name="websitename" [(ngModel)]="websitename" value={{this.websitename}} formControlName="weburl" placeholder="" >
+  <small *ngIf="f.weburl.touched && f.weburl.invalid" class="col-md-4 col-form-label text-md-right">
+   
+    <small *ngIf="f.weburl?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid url.</small>
+
+  </small>
+</div>
+  <div class="form-group">
+  <b ><label for="social profile">LinkedIn</label></b>
+  <p style= "font-size:12px">LinkedIn URL</p>
+  <input type="text" class="form-control" [(ngModel)]="socprof"  formControlName="socprof" value={{this.socprof}} name="socialprof" placeholder="https://in.linkedin.com/in/keyologic" >
+  <small *ngIf="f.socprof.touched && f.socprof.invalid" class="col-md-4 col-form-label text-md-right">
+    
+    <small *ngIf="f.socprof?.errors?.pattern" style="color:red;font-size:10px;">Please enter a valid social profile.</small>
+
+  </small>
+  <br> <br>
+</div>
+  </div> <!-- card-body.// -->
+  </article> <!-- card.// -->
+  
+ <!-- col.// -->
+  </div>
+  </div>
+  <div class="container my-3 bg-light">
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-warning"   (click)="next()" >Save</button>
+    </div>
+    
+</div>
+
+
+
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Enter Pin</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p style="color: tomato;">Note: Please remember the pin you enter </p>
+    <input type="text" class="form-control" [(ngModel)]="securitykey" formControlName="securitykey" style="padding: 1px 20px">
+    <small *ngIf="f.securitykey.touched && f.securitykey.invalid" class="col-md-4 col-form-label text-md-right">
+    
+      <small *ngIf="f.securitykey?.errors?.maxlength" style="color:red;font-size:12px;">Please enter a six digit key</small>
+      <small *ngIf="f.securitykey?.errors?.pattern" style="color:red;font-size:12px;">Please enter a valid key (A valid key contains alphabets,numericals[A-Z,a-z,0-9])</small>
+  
+    </small>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-warning" (click)="Save(modalData)">Save</button> 
+  </div>
+</ng-template>
+  </form>
+  <footer class="footer">
+    <p>Copyright © 2022 Hanbhee. All rights reserved. Privacy Policy Terms of Service</p>
+</footer>
+  </body>
+    <router-outlet></router-outlet>
+    
+    

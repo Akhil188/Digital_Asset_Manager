@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+  <body>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container">
+  <div class="row">
+  <aside class="col-sm-8">
+     
+  <article class="card">
+  <div class="card-body p-5">
+   
+ 
+    DataAsset 
+   <select id="AssetId" [(ngModel)]="AssetId" formControlName="AssetId"  class="form-control" style="height: max-content;" >
+    <option value="HB-AS-1001">Aadhar Card</option>
+    <option value="HB-AS-1002">PanCard</option>
+    <option value="HB-AS-1003">Passport</option>
+  
+  </select> <br>
+
+  PIN&nbsp;<input type="text" [(ngModel)]="pin" formControlName="pin" name="pin" class="form-control"><br>
+  Title&nbsp;<input type="text" [(ngModel)]="title" formControlName="title"  name="title" class="form-control" ><br>
+  ID&nbsp;<input type="text" [(ngModel)]="id" formControlName="id" name="id" class="form-control"><br>
+  Name&nbsp;<input type="text" [(ngModel)]="name" formControlName="name" name="name" class="form-control"><br>
+  Issuer&nbsp;<input type="text" [(ngModel)]="issuer" formControlName="issuer" name="issuer" class="form-control"><br>
+  <input type="file" class="file-input"
+  (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+
+{{fileName || "No file uploaded yet."}}
+
+<button mat-mini-fab color="primary" class="upload-btn"
+ (click)="fileUpload.click()" multiple>
+   Attach
+</button><br><label style="color: green;">{{this.msg1}}</label>
+<br><br>
+</div>
+   <input type="button" value="Create Asset" (click)="create()" class="btn btn-info btn-block" style="background-color:#FFA900">
+  <br><b>
+   <div class="abc"
+   [ngStyle]="{'color':(this.stat === 'success')? 'green' : 'red'}">{{this.msg2}}
+  </div></b>
+  <input type="button" value="View all" (click)="viewall()" class="btn btn-info btn-block" style="background-color:#FFA900">
+  <input type="button" value="View particular" (click)="viewparticular()" class="btn btn-info btn-block" style="background-color:#FFA900">
+  <input type="button" value="Send" (click)="send()" class="btn btn-info btn-block" style="background-color:#FFA900">
+  <input type="button" value="Receive" (click)="receive()" class="btn btn-info btn-block" style="background-color:#FFA900">
+  <input type="button" value="Download" (click)="download()" class="btn btn-info btn-block" style="background-color:#FFA900">
+</div><br>
+  </article> <!-- card.// -->
+  
+  
+  </aside> <!-- col.// -->
+  </div>
+  </div>
+
+  
+  
+    
+    <div class="container">
+      <div class="row">
+      <aside class="col-sm-15">
+       <br>  <article class="card"><h1 style="background-color: thistle;">Received</h1></article><br>
+      
+              <article class="card">
+              
+              <div class="card-body p-3">
+              <hr>
+              <div class="row">
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <table>
+                          <th>Asset ID</th>
+                          <tr *ngFor="let p of this.asse">{{p}}</tr>
+                        </table>
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+          
+                        <table>
+                          <th>From</th>
+                          <tr *ngFor="let p of this.from">{{p}}</tr>
+                        </table>
+                       
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+          
+                        <table>
+                          <th>Expiry</th>
+                          <tr *ngFor="let p of this.exp">{{p}}</tr>
+                        </table>
+                       
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+              
+              </article> <!-- card.// -->
+              </aside></div></div>
+  
+            </form>
+          </body>
+            <router-outlet></router-outlet>      
+    
+    
+           
+    
